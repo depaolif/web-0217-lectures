@@ -24,6 +24,17 @@ id | name |
 # - If there is a many to many, we need a third table
 
 # Write your answer here.
+# customers
+id | name
+
+# reviews
+id | customer_id | restaurant_id
+
+# restaurants
+id | name | owner_id
+
+# owners
+id | name
 
 # 2. As a second step, please fill in the stubbed out methods in the respective model.
 # Customer#reviews

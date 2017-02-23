@@ -14,9 +14,21 @@ class Review
   
 
   def customer
+    sql = <<-SQL
+      SELECT customers.* FROM customers
+      INNER JOIN reviews ON customers.id = reviews.customer_id
+      WHERE reviews.id = ?
+    SQL
+    self.class.db.execute(sql,self.id)
   end
 
   def restaurant
+    sql = <<-SQL 
+      SELECT restaurants.* FROM restaurants
+      INNER JOIN reviews ON restaurants.id = reviews.restaurant_id
+      WHERE reviews.id = ?
+    SQL
+    self.class.db.execute(sql,self.id)
   end
 
 end
