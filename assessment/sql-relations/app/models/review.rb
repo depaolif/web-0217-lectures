@@ -30,6 +30,7 @@ class Review
     SQL
     self.class.db.execute(sql,self.id)
   end
+# perfect.
 
 end
 
