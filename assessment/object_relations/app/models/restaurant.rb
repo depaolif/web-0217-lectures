@@ -19,6 +19,7 @@ class Restaurant
   end
 
   def customers
+# 	  great job here.
   	self.reviews.map do |review|
   		review.customer
   	end
